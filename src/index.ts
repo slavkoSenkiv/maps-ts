@@ -1,4 +1,5 @@
 import { User } from "./User";
 console.log('hello there');
-console.log(User);
+const user = new User;
+console.log(user);
 
