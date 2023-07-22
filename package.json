@@ -11,6 +11,8 @@
   "dependencies": {
     "@faker-js/faker": "^8.0.2",
     "@types/faker": "^6.6.9",
-    "faker": "^6.6.6"
+    "@types/google.maps": "^3.53.5",
+    "faker": "^6.6.6",
+    "google-maps": "^4.3.3"
   }
 }
