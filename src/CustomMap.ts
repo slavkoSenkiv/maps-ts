@@ -3,7 +3,8 @@ export class CustomMap {
     googleMap: google.maps.Map;
 
     constructor(divId){
-        this.googleMap = new google.maps.Map(document.getElementById(divId) as HTMLElement, {
+        this.googleMap = new google.maps.Map(
+            document.getElementById(divId) as HTMLElement, {
             zoom: 1,
             center: {
                 lat: 0,
@@ -17,16 +18,16 @@ export class CustomMap {
         const marker = new google.maps.Marker({
             map: this.googleMap,
             position: {
-                lat: entity.location.ltd,
+                lat: entity.location.lad,
                 lng: entity.location.lng
             }
         });
 
-        marker.addListener('click', ()=>{
+        /* marker.addListener('click', ()=>{
             const infoWondow = new google.maps.InfoWindow({
                 content: entity.markerContent()
             });
             infoWondow.open(this.googleMap, marker);
-        });
+        }); */
     }
 }
