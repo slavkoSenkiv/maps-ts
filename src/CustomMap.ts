@@ -1,3 +1,13 @@
+
+
+export interface Mappable {
+    location: {
+        lat: number;
+        lng: number;
+    }
+    markerContent(): string;
+}
+
 export class CustomMap {
 
     googleMap: google.maps.Map;
@@ -18,16 +28,16 @@ export class CustomMap {
         const marker = new google.maps.Marker({
             map: this.googleMap,
             position: {
-                lat: entity.location.lad,
+                lat: entity.location.lat,
                 lng: entity.location.lng
             }
         });
 
-        /* marker.addListener('click', ()=>{
+        marker.addListener('click', ()=>{
             const infoWondow = new google.maps.InfoWindow({
                 content: entity.markerContent()
             });
             infoWondow.open(this.googleMap, marker);
-        }); */
+        });
     }
 }
