@@ -1,4 +1,4 @@
-class CustomMap {
+export class CustomMap {
     googleMap: google.maps.Map;
 
     constructor(divId){
@@ -8,6 +8,24 @@ class CustomMap {
                 lat: 0,
                 lng: 0
             }
-        })
+        });
+    }
+
+    addMarker(entity){
+
+        const marker = new google.maps.Marker({
+            map: this.googleMap,
+            position:{
+                lat: entity.location.lat,
+                lng: entity.location.lng
+            }
+        });
+
+        marker.addListener('click', ()=>{
+            const infoWindow = new google.maps.InfoWindow({
+                content: entity.markerContent()
+            });
+            infoWindow.open(this.googleMap, marker);
+        });
     }
 }

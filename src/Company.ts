@@ -1,13 +1,15 @@
 import { faker } from "@faker-js/faker";
 
-export class User {
-    userName: string;
+export class Company {
+    companyName: string;
+    catchPhrase: string;
     location:{
         lat: number;
         lng: number;
     }
     constructor(){
-        this.userName = faker.person.fullName();
+        this.companyName = faker.company.name();
+        this.catchPhrase = faker.company.catchPhrase();
         this.location = {
             lat: faker.location.latitude(),
             lng: faker.location.longitude()
@@ -15,6 +17,9 @@ export class User {
     }
 
     markerContent(){
-        return `User Name: ${this.userName}`
+        return `
+        Company Name: ${this.companyName} </br>
+        "${this.catchPhrase}"
+        `
     }
 }
